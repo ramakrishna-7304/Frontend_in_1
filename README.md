@@ -2,6 +2,9 @@
 
 A modern, performance-focused landing page inspired by AppDost, built with React, Vite, Tailwind CSS, Lucide icons, and Framer Motion.
 
+## Live Demo
+- Netlify: https://6904935f501a9632a2f9c3f9--unrivaled-cat-120ffa.netlify.app/
+
 ## Tech Stack
 - React 18 + Vite 5
 - Tailwind CSS 3
@@ -15,6 +18,7 @@ A modern, performance-focused landing page inspired by AppDost, built with React
 - Services, Projects, About (animated counters), Testimonials, Contact, Footer
 - Glassmorphism, gradients, shadows, micro-interactions
 - Accessible markup, focus styles, and responsive layout
+- Service detail pages and Project detail pages (with GitHub links)
 
 ## Getting Started
 ```bash
@@ -39,11 +43,20 @@ appdost-ui/
 ├── postcss.config.js
 ├── tailwind.config.js
 ├── vite.config.js
+├── vercel.json
+├── netlify.toml
 ├── public/
 └── src/
     ├── App.jsx
     ├── index.css
     ├── main.jsx
+    ├── data/
+    │   ├── services.js
+    │   └── projects.js
+    ├── pages/
+    │   ├── Home.jsx
+    │   ├── ServiceDetail.jsx
+    │   └── ProjectDetail.jsx
     └── components/
         ├── Navbar.jsx
         ├── Hero.jsx
@@ -52,6 +65,7 @@ appdost-ui/
         ├── About.jsx
         ├── Testimonials.jsx
         ├── Contact.jsx
+        ├── ScrollProgress.jsx
         └── Footer.jsx
 ```
 
@@ -62,8 +76,9 @@ appdost-ui/
 
 ## Deployment
 - Build output: `dist`
+- Netlify (live): https://6904935f501a9632a2f9c3f9--unrivaled-cat-120ffa.netlify.app/
 - Vercel: Framework Preset “Vite”, Build: `npm run build`, Output: `dist`
-- Netlify: Build: `npm run build`, Publish: `dist`
+- Netlify: Build: `npm run build`, Publish: `dist`, SPA redirects via `netlify.toml`
 
 ## Accessibility & Performance
 - Semantic HTML, visible focus states
