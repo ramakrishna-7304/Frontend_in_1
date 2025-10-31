@@ -1,13 +1,8 @@
 import { motion } from 'framer-motion'
+import { projects as projectsData } from '../data/projects.js'
+import { Link } from 'react-router-dom'
 
-const projects = [
-	{ title: 'FinTech Mobile App', stack: ['React Native', 'Node.js', 'MongoDB'] },
-	{ title: 'E-Commerce Platform', stack: ['React', 'Tailwind', 'Stripe'] },
-	{ title: 'Healthcare Dashboard', stack: ['Next.js', 'TypeScript', 'Charts'] },
-	{ title: 'Social Media App', stack: ['Flutter', 'Firebase', 'Cloud Functions'] },
-	{ title: 'Real Estate Portal', stack: ['React', 'Maps API', 'PostgreSQL'] },
-	{ title: 'Food Delivery App', stack: ['React Native', 'Redux', 'Express'] },
-]
+const projects = projectsData
 
 export default function Projects() {
 	return (
@@ -42,7 +37,7 @@ export default function Projects() {
 							<div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity" />
 							<div className="absolute inset-x-0 bottom-0 translate-y-6 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all p-6 flex items-center justify-between">
 								<p className="text-white/80 text-sm">High-level case study available</p>
-								<button aria-label={`View details of ${p.title}`} className="px-4 py-2 rounded-lg bg-gradient-to-r from-primary to-secondary font-semibold shadow-lg">View Details</button>
+								<Link to={`/projects/${p.slug}`} aria-label={`View details of ${p.title}`} className="px-4 py-2 rounded-lg bg-gradient-to-r from-primary to-secondary font-semibold shadow-lg">View Details</Link>
 							</div>
 						</motion.article>
 					))}
